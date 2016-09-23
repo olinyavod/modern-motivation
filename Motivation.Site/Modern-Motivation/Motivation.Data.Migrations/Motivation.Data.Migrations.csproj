@@ -49,6 +49,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201609231132124_InitDb.cs" />
+    <Compile Include="Migrations\201609231132124_InitDb.Designer.cs">
+      <DependentUpon>201609231132124_InitDb.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -65,6 +69,11 @@
       <Project>{0c94b191-6fc5-42f0-a3dd-a24f4dc05a1b}</Project>
       <Name>Motivation.Models</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201609231132124_InitDb.resx">
+      <DependentUpon>201609231132124_InitDb.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
