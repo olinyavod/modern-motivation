@@ -11,9 +11,7 @@ namespace Motivation.Data
 
 			HasKey(m => m.Id);
 
-			HasRequired(m => m.TypicalType)
-				.WithMany()
-				.HasForeignKey(m => m.TypicalTypeId);
+			
 		}
 	}
 }

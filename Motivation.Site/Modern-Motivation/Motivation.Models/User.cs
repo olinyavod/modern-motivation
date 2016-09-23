@@ -6,7 +6,7 @@ namespace Motivation.Models
     {
 	    public string Login { get; set; }
 
-	    public string Title { get; set; }
+	    public string Name { get; set; }
 
 	    public string Password { get; set; }
 
@@ -16,10 +16,10 @@ namespace Motivation.Models
 
 	    public bool IsGeneral { get; set; }
 
-	    public DateTime? Bithday { get; set; }
+	    public DateTime? Birthday { get; set; }
 
 	    public int Exp { get; set; }
 
-	    public int Counts { get; set; }
+	    public int CoinsCount { get; set; }
     }
 }

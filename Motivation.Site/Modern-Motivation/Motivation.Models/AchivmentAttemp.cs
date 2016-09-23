@@ -1,10 +1,14 @@
+using System;
+
 namespace Motivation.Models
 {
 	public class AchivmentAttemp : EntityBase
 	{
-		public FileInfo File { get; set; }
+		public string FileName { get; set; }
 
-		public int FileId { get; set; }
+		public string FileExt { get; set; }
+
+		public string FileUrl { get; set; }
 
 		public User User { get; set; }
 
@@ -23,5 +27,7 @@ namespace Motivation.Models
 		public AchivnedType AchivnedType { get; set; }
 
 		public int AchivnedTypeId { get; set; }
+
+		public DateTime CreateDate { get; set; }
 	}
 }

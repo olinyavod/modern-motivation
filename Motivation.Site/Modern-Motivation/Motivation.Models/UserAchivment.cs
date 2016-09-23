@@ -2,7 +2,7 @@ using System;
 
 namespace Motivation.Models
 {
-	public class UserAchivned : EntityBase
+	public class UserAchivment : EntityBase
 	{
 		public int UserId { get; set; }
 
