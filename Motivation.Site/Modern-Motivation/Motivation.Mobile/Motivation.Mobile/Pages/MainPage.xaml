@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<MasterDetailPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:Motivation.Mobile"
+									MasterBehavior="Popover"
+             x:Class="Motivation.Mobile.Pages.MainPage"
+									Icon="MenuIcon.png" Title=" ">
+	<MasterDetailPage.Resources>
+		<ResourceDictionary>
+			<DataTemplate x:Key="CurrentUserTemplate">
+				
+			</DataTemplate>
+		</ResourceDictionary>
+	</MasterDetailPage.Resources>
+	<ListView Footer="{Binding CurrentUser}">
+		
+	</ListView>
+</MasterDetailPage>

@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-
+using Motivation.Mobile.Pages;
 using Xamarin.Forms;
 
 namespace Motivation.Mobile
@@ -13,7 +13,7 @@ namespace Motivation.Mobile
 		{
 			InitializeComponent();
 
-			MainPage = new Motivation.Mobile.MainPage();
+			MainPage = new AppNavigationBar(new MainPage());
 		}
 
 		protected override void OnStart()
