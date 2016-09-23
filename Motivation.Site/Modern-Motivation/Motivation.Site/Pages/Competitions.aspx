@@ -54,6 +54,14 @@
                         HorizontalAlign="Center" />
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
+                          <asp:TemplateField HeaderText="Описание">
+                            <ItemTemplate>
+                                <asp:Label runat="server" Text='<%#Eval("Comment") %>' />
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:TextBox runat="server" ID="EXP" TextMode="MultiLine" CssClass="form-control" Text='<%#Bind("Comment") %>' />
+                            </EditItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Дата начала">
                             <ItemTemplate>
                                 <asp:Label ID="Label2" runat="server" Text='<%#Eval("StartDate") %>' />
@@ -71,14 +79,7 @@
                                 <asp:TextBox runat="server" ID="NAME" CssClass="form-control" Text='<%#Bind("EndDate") %>' />
                             </EditItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Опыт">
-                            <ItemTemplate>
-                                <asp:Label runat="server" Text='<%#Eval("Comment") %>' />
-                            </ItemTemplate>
-                            <EditItemTemplate>
-                                <asp:TextBox runat="server" ID="EXP" TextMode="MultiLine" CssClass="form-control" Text='<%#Bind("Comment") %>' />
-                            </EditItemTemplate>
-                        </asp:TemplateField>
+                      
                     </Columns>
                     <HeaderStyle BackColor="#428bca" ForeColor="White" Font-Bold="True" HorizontalAlign="Left" />
                     <PagerStyle BackColor="#f5f5f5" HorizontalAlign="Center" />

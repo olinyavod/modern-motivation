@@ -170,6 +170,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Pages\AchivementAttemp.aspx.cs">
+      <DependentUpon>AchivementAttemp.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\AchivementAttemp.aspx.designer.cs">
+      <DependentUpon>AchivementAttemp.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\AchivementTypes.aspx.cs">
       <DependentUpon>AchivementTypes.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -183,6 +190,13 @@
     </Compile>
     <Compile Include="Pages\Competitions.aspx.designer.cs">
       <DependentUpon>Competitions.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\UserGroups.aspx.cs">
+      <DependentUpon>UserGroups.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\UserGroups.aspx.designer.cs">
+      <DependentUpon>UserGroups.aspx</DependentUpon>
     </Compile>
     <Compile Include="Pages\Users.aspx.cs">
       <DependentUpon>Users.aspx</DependentUpon>
@@ -205,13 +219,16 @@
   <ItemGroup>
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Images\logo.png" />
     <Content Include="Content\sb-admin-2.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Pages\AchivementAttemp.aspx" />
     <Content Include="Pages\AchivementTypes.aspx" />
     <Content Include="Pages\Competitions.aspx" />
+    <Content Include="Pages\UserGroups.aspx" />
     <Content Include="Pages\Users.aspx" />
     <Content Include="Scripts\ai.0.22.19-build00125.js" />
     <Content Include="Scripts\ai.0.22.19-build00125.min.js" />

@@ -43,6 +43,8 @@
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
             <div class="navbar-header">
+                
+                
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="sr-only">Toggle navigation</span>
                     <span class="icon-bar"></span>
@@ -50,6 +52,7 @@
                     <span class="icon-bar"></span>
                 </button>
                 <a class="navbar-brand" href="index.html">Modern Motivation</a>
+                
             </div>
             <!-- /.navbar-header -->
 
@@ -89,10 +92,10 @@
                             <a href="Products.aspx"><i class="fa fa-edit fa-fw"></i> Список достижений сотрудников</a>
                         </li>
                         <li>
-                            <a href="EquipmentTypes.aspx"><i class="fa fa-wrench fa-fw"></i> Заявки на подтверждение достижений</a>
+                            <a href="AchivementAttemp.aspx"><i class="fa fa-wrench fa-fw"></i> Заявки на подтверждение достижений</a>
                         </li>
                         <li>
-                             <a href="PromoActions.aspx"><i class="fa fa-wrench fa-fw"></i> Соревнования</a>
+                             <a href="Competitions.aspx"><i class="fa fa-wrench fa-fw"></i> Соревнования</a>
                             <!-- /.nav-second-level -->
                         </li>
                         <li>
@@ -101,6 +104,7 @@
                         </li>
 
                     </ul>
+                    <img src="../../Content/Images/logo.png" style="width:270px"/>
                 </div>
                 <!-- /.sidebar-collapse -->
             </div>

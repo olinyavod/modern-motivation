@@ -57,7 +57,7 @@
                         HorizontalAlign="Center" />
                     <AlternatingRowStyle BackColor="White" />
                     <Columns>
-                        <asp:TemplateField HeaderText="Login">
+                        <asp:TemplateField HeaderText="Наименование">
                             <ItemTemplate>
                                 <asp:Label ID="Label2" runat="server" Text='<%#Eval("Comment") %>' />
                             </ItemTemplate>
@@ -66,7 +66,7 @@
                                 <asp:RequiredFieldValidator ID="RequiredFieldValidator1" runat="server" ControlToValidate="DESCR" ErrorMessage="*" Display="Dynamic" ValidationGroup="edit" />
                             </EditItemTemplate>
                         </asp:TemplateField>
-                        <asp:TemplateField HeaderText="Количество элементов">
+                        <asp:TemplateField HeaderText="Номинальное количество">
                             <ItemTemplate>
                                 <asp:Label runat="server"  Text='<%#Eval("MaxCount") %>' />
                             </ItemTemplate>
@@ -79,7 +79,7 @@
                                 <asp:Label runat="server" Text='<%#Eval("ExpCount") %>' />
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:TextBox runat="server" ID="EXP" CssClass="form-control" Text='<%#Bind("ExpCount") %>' />
+                                <asp:TextBox runat="server" ID="EXP_COUNT" CssClass="form-control" Text='<%#Bind("ExpCount") %>' />
                             </EditItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Монеты">
