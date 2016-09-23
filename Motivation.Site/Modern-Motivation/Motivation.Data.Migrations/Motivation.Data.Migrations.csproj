@@ -53,6 +53,10 @@
     <Compile Include="Migrations\201609231132124_InitDb.Designer.cs">
       <DependentUpon>201609231132124_InitDb.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609231250584_FixNameCompititionAchivmentTypeTable.cs" />
+    <Compile Include="Migrations\201609231250584_FixNameCompititionAchivmentTypeTable.Designer.cs">
+      <DependentUpon>201609231250584_FixNameCompititionAchivmentTypeTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -73,6 +77,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201609231132124_InitDb.resx">
       <DependentUpon>201609231132124_InitDb.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609231250584_FixNameCompititionAchivmentTypeTable.resx">
+      <DependentUpon>201609231250584_FixNameCompititionAchivmentTypeTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

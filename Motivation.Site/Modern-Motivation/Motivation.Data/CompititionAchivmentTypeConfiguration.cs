@@ -7,7 +7,7 @@ namespace Motivation.Data
 	{
 		public CompititionAchivmentTypeConfiguration()
 		{
-			ToTable("dbo/CompititionAchivmentypes");
+			ToTable("dbo.CompititionAchivmentypes");
 
 			HasKey(m => m.Id);
 
