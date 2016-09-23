@@ -26,7 +26,7 @@ namespace Motivation.Models
 
 		public AchivmentType AchivmentType { get; set; }
 
-		public int AchivnedTypeId { get; set; }
+		public int? AchivnedTypeId { get; set; }
 
 		public DateTime CreateDate { get; set; }
 	}

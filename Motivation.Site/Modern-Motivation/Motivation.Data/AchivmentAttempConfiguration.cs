@@ -19,7 +19,7 @@ namespace Motivation.Data
 				.WithMany()
 				.HasForeignKey(m => m.AcceptUserId);
 
-			HasRequired(m => m.AchivmentType)
+			HasOptional(m => m.AchivmentType)
 				.WithMany()
 				.HasForeignKey(m => m.AchivnedTypeId);
 		}
