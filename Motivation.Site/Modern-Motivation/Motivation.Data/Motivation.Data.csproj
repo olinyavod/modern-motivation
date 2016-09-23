@@ -49,11 +49,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AchivnedTypeConfiguration.cs" />
+    <Compile Include="AchivmentAttempConfiguration.cs" />
+    <Compile Include="AchivmentTypeConfiguration.cs" />
+    <Compile Include="CompititionAchivmentTypeConfiguration.cs" />
+    <Compile Include="CompititionConfiguration.cs" />
+    <Compile Include="CompititionGroupConfiguration.cs" />
     <Compile Include="MotivationDb.cs" />
+    <Compile Include="ProductConfiguration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UserAchivmentConfigration.cs" />
     <Compile Include="UserConfiguration.cs" />
     <Compile Include="UserGroupConfiguration.cs" />
+    <Compile Include="UserProductConfiguration.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

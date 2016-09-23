@@ -2,7 +2,7 @@
 
 namespace Motivation.Models
 {
-	public class AchivnedType : EntityBase
+	public class AchivmentType : EntityBase
 	{
 		public string Comment { get; set; }
 

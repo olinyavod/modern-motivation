@@ -24,7 +24,7 @@ namespace Motivation.Models
 
 		public string Comment { get; set; }
 
-		public AchivnedType AchivnedType { get; set; }
+		public AchivmentType AchivmentType { get; set; }
 
 		public int AchivnedTypeId { get; set; }
 

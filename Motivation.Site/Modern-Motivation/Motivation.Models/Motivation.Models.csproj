@@ -38,9 +38,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AchivmentAttemp.cs" />
-    <Compile Include="AchivnedType.cs" />
+    <Compile Include="AchivmentType.cs" />
     <Compile Include="Compitition.cs" />
-    <Compile Include="CompititionAchivnedType.cs" />
+    <Compile Include="CompititionAchivmentType.cs" />
     <Compile Include="CompititionGroup.cs" />
     <Compile Include="EntityBase.cs" />
     <Compile Include="IEntity.cs" />
