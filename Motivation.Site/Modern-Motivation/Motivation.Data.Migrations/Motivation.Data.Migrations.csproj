@@ -49,11 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Motivation.Data\Motivation.Data.csproj">
+      <Project>{afb26c64-84a6-47af-9826-9eea36a0c39f}</Project>
+      <Name>Motivation.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Motivation.Models\Motivation.Models.csproj">
+      <Project>{0c94b191-6fc5-42f0-a3dd-a24f4dc05a1b}</Project>
+      <Name>Motivation.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

@@ -1,11 +1,20 @@
 ﻿namespace Motivation.Models
 {
-	public enum UserGroup
+	public class UserGroup : EntityBase
 	{
-		Admin,
-		ActiveSales,
-		SalesSupport,
-		B2B,
-		B2G
+		public string Name { get; set; }
+
+		public UserGroupType Type { get; set; }
+	}
+
+	public class Products : EntityBase
+	{
+		public string Name { get; set; }
+
+		public string Comment { get; set; }
+
+		public string ImageUrl { get; set; }
+
+		public int Price { get; set; }
 	}
 }

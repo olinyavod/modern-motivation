@@ -1,7 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 
 namespace Motivation.Models
 {
@@ -13,10 +10,16 @@ namespace Motivation.Models
 
 	    public string Password { get; set; }
 
-	    public UserGroup Group { get; set; }
+	    public UserGroup UserGroup { get; set; }
+
+	    public int UserGroupId { get; set; }
 
 	    public bool IsGeneral { get; set; }
 
 	    public DateTime? Bithday { get; set; }
+
+	    public int Exp { get; set; }
+
+	    public int Counts { get; set; }
     }
 }

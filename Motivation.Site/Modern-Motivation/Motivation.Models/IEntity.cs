@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Motivation.Models
+﻿namespace Motivation.Models
 {
 	public interface IEntity<TKey>
 	{
