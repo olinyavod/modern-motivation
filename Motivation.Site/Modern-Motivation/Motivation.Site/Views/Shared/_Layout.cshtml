@@ -6,29 +6,18 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title></title>
     <link href="~/Content/bootstrap.css" rel="stylesheet">
-    <link href="~/Content/freelancer.css" rel="stylesheet">
+    @*<link href="~/Content/freelancer.css" rel="stylesheet">*@
+    <link href="~/Content/RobotoFont.css" rel="stylesheet" />
     <link href="~/Content/Site.css" rel="stylesheet">
-    @RenderSection("Styles", required: false)
-    <style>
-        html, body {
-            height: 100%;
-            margin: 0;
-            padding: 0;
-            overflow: hidden;
-        }
-    </style>
-</head>
-<body id="page-top" class="index" style="min-height: 100%;">
-    @RenderBody()
-
+    <link href="//db.onlinewebfonts.com/c/daf2f572726b3bd31ae892672a2d2015?family=MullerW00-Regular" rel="stylesheet" type="text/css" />
     <script src="~/Scripts/jquery-3.1.0.min.js" type="text/javascript"></script>
     <script src="~/Scripts/jquery-ui-1.8.20.min.js" type="text/javascript"></script>
     <script src="~/Scripts/jquery.unobtrusive-ajax.min.js" type="text/javascript"></script>
     <script src="~/Scripts/bootstrap.min.js" type="text/javascript"></script>
-    <script type="text/javascript">
-        var wind = $(window).width();
-        $('.maxheight').css('min-height', wind);
-    </script>
+    @RenderSection("Styles", required: false)
+</head>
+<body id="page-top" class="index" style="min-height: 100%;">
+    @RenderBody()
     @RenderSection("scripts", required: false)
 </body>
 </html>

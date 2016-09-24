@@ -1,0 +1,80 @@
+﻿@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="dashboard display-animation" style="margin: 0 auto; width: 600px;">
+    <span class="tile tile-light-gray ripple-effect" style="width: 99%; height: 70px;">
+        <div class="label1" style="text-align: center; font-size: 30px;">
+            Анкета
+        </div>
+    </span>
+    <div class="row">
+        <div class="col-sm-6" style="background-image: url(../../Content/Images/anketa/Photo.png); background-size: cover; background-repeat: no-repeat; width: 100%;"></div>
+        <div class="col-sm-6" style="background-image: url(../../Content/Images/anketa/Information.png); background-size: cover; background-repeat: no-repeat; width: 100%;"></div>
+    </div>
+    <div style="background-image: url(../../Content/Images/anketa/Descr.png); background-size: cover; background-repeat: no-repeat; height: 303px; width: 100%;">
+
+    </div>
+    @*<a class="tile tile-lg tile-sqr ripple-effect" style="height: 30px;">
+        <div style="font-size: 24px; text-align: center;">Характеристики</div>
+    </a>
+    <a class="tile tile-lg ripple-effect" style="height: 30px;">
+        <div style="font-size: 24px; text-align: center; height: 30px;">Список достижений</div>
+    </a>
+    <a class="tile tile-lg tile-sqr ripple-effect" style="height: 30px;">
+        <div style="font-size: 24px; text-align: center; height: 30px;">События</div>
+    </a>*@
+</div>
+
+
+<script>
+    (function ($) {
+        var speed = 2000;
+        var container = $('.display-animation');
+        container.each(function () {
+            var elements = $(this).children();
+            elements.each(function () {
+                var elementOffset = $(this).offset();
+                var offset = elementOffset.left * 0.8 + elementOffset.top;
+                var delay = parseFloat(offset / speed).toFixed(2);
+                $(this)
+                    .css("-webkit-animation-delay", delay + 's')
+                    .css("-o-animation-delay", delay + 's')
+                    .css("animation-delay", delay + 's')
+                    .addClass('animated');
+            });
+        });
+    })(jQuery);
+
+    (function ($) {
+        $(".ripple-effect").click(function (e) {
+            var rippler = $(this);
+
+            // create .ink element if it doesn't exist
+            if (rippler.find(".ink").length == 0) {
+                rippler.append("<span class='ink'></span>");
+            }
+
+            var ink = rippler.find(".ink");
+
+            // prevent quick double clicks
+            ink.removeClass("animate");
+
+            // set .ink diametr
+            if (!ink.height() && !ink.width()) {
+                var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
+                ink.css({ height: d, width: d });
+            }
+
+            // get click coordinates
+            var x = e.pageX - rippler.offset().left - ink.width() / 2;
+            var y = e.pageY - rippler.offset().top - ink.height() / 2;
+
+            // set .ink position and add class .animate
+            ink.css({
+                top: y + 'px',
+                left: x + 'px'
+            }).addClass("animate");
+        })
+    })(jQuery);
+</script>

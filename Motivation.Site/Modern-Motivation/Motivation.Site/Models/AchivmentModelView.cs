@@ -7,5 +7,12 @@ namespace Motivation.Site.Models
 {
     public class AchivmentModelView
     {
+        public DateTime Date;
+
+        public string UserName;
+
+        public string AchivmentName;
+
+        public string AchivmentComment;
     }
 }

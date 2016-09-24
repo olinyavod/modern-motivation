@@ -1,5 +1,6 @@
 ﻿using Motivation.Data;
 using Motivation.Models;
+using Motivation.Site.Models;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
@@ -8,10 +9,33 @@ namespace Motivation.Site.Controllers
 {
 	public class HomeController : Controller
 	{
-		public ActionResult Index()
+        MotivationDb baseContent = new MotivationDb();
+
+        public ActionResult Index()
 		{
-			return View();
+            List<AchivmentModelView> achList;
+            List<AchivmentModelView> newsList;
+
+            achList = CreateQuery(2, 10).ToList();
+            newsList = CreateQuery(0, 100).ToList();
+
+            ViewBag.AchivmentModels = achList;
+            ViewBag.NewsModels = newsList;
+
+            baseContent.Dispose();
+
+            return View();
 		}
+
+        public ActionResult Login()
+        {
+            return Redirect("~/Pages/Users.aspx");
+        }
+
+        public ActionResult Anketa()
+        {
+            return Redirect("~/Anketa/Index");
+        }
 
 		public ActionResult About()
 		{
@@ -37,7 +61,24 @@ namespace Motivation.Site.Controllers
             return View("GetRating", userList);
         }
 
-		public ActionResult Contact()
+        IQueryable<AchivmentModelView> CreateQuery(int _userId, int _count)
+        {
+            return from u in baseContent.Set<UserAchivment>()
+                   from a in baseContent.Set<AchivmentType>().Where(a => a.Id == u.AchivnedTypeId)
+                   from g in baseContent.Set<User>().Where(i => i.Id == u.UserId && (u.UserId == _userId || _userId == 0))
+                   .OrderBy(x => u.Date)
+                   .OrderByDescending(x => u.Date)
+                   .Take(_count)
+                   select new AchivmentModelView
+                   {
+                       Date = u.Date,
+                       AchivmentComment = u.Comment,
+                       AchivmentName = a.Comment,
+                       UserName = g.Name
+                   };
+        }
+
+        public ActionResult Contact()
 		{
 			ViewBag.Message = "Your contact page.";
 

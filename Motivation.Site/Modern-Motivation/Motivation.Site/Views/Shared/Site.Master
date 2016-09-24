@@ -51,15 +51,14 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <a class="navbar-brand" href="index.html">Modern Motivation</a>
-                
+                <asp:LinkButton runat="server" PostBackUrl="~/Home/Index" CssClass="navbar-brand">Modern Motivation</asp:LinkButton>               
             </div>
             <!-- /.navbar-header -->
 
             <ul class="nav navbar-top-links navbar-right" style="margin:20px">
 
                     <asp:Label runat="server" ID="USER_NAME"/>
-                    <asp:LinkButton runat="server"><i class="fa fa-sign-out fa-fw"></i> Выйти</asp:LinkButton>
+                    <asp:LinkButton runat="server" PostBackUrl="~/Home/Index"><i class="fa fa-sign-out fa-fw"></i> Выйти</asp:LinkButton>
 
             </ul>
             <!-- /.navbar-top-links -->

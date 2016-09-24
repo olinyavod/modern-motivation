@@ -32,7 +32,7 @@
             SelectCommand="		SELECT ach.Id, ach.Comment, ach.MaxCount, CASE WHEN amp_ach.Id IS NOT NULL THEN CAST(1 AS bit) ELSE CAST( 0 AS bit) END AS IsChecked
 	FROM dbo.AchivmentType AS ach
 	LEFT JOIN dbo.CompititionAchivmentypes AS amp_ach ON 
-		amp_ach.Id = amp_ach.AchivnedTypeId
+		ach.Id = amp_ach.AchivnedTypeId
 		AND amp_ach.CompititionId = @CompetitionId
 	">            <SelectParameters>
                 <asp:QueryStringParameter Name="CompetitionId" QueryStringField="CompetitionId"/>

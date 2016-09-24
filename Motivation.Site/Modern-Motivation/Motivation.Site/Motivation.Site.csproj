@@ -200,6 +200,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AchivmentAttempsController.cs" />
+    <Compile Include="Controllers\AnketaController.cs" />
     <Compile Include="Controllers\CompititionsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\LoginController.cs" />
@@ -279,14 +280,24 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\font-awesome.min.css" />
     <Content Include="Content\freelancer.css" />
+    <Content Include="Content\Images\anketa\Descr.png" />
+    <Content Include="Content\Images\anketa\Information.png" />
+    <Content Include="Content\Images\anketa\Photo.png" />
     <Content Include="Content\Images\cabin.png" />
     <Content Include="Content\Images\cake.png" />
     <Content Include="Content\Images\circus.png" />
     <Content Include="Content\Images\game.png" />
     <Content Include="Content\Images\logo.png" />
+    <Content Include="Content\Images\main\Graphics.png" />
+    <Content Include="Content\Images\main\Notebook.png" />
+    <Content Include="Content\Images\main\Competitions.png" />
+    <Content Include="Content\Images\main\Mobile.png" />
+    <Content Include="Content\Images\main\Profile.png" />
+    <Content Include="Content\Images\main\Paper.png" />
     <Content Include="Content\Images\profile.png" />
     <Content Include="Content\Images\safe.png" />
     <Content Include="Content\Images\submarine.png" />
+    <Content Include="Content\RobotoFont.css" />
     <Content Include="Content\sb-admin-2.css" />
     <Content Include="Content\singin.css" />
     <Content Include="favicon.ico" />
@@ -360,6 +371,7 @@
     <Content Include="Views\Shared\RatingList.cshtml" />
     <Content Include="Views\Home\GetRating.cshtml" />
     <Content Include="Views\Shared\Site.cshtml" />
+    <Content Include="Views\Anketa\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -34,6 +34,21 @@ namespace Motivation.Site.Pages
                     DBUtils.ExecuteNonQuery("DELETE FROM dbo.CompititionGroup WHERE CompititionId = @CompititionId AND UserGroupId = @UserGroupId", new SqlParameter("CompititionId", competitionId), new SqlParameter("UserGroupId", groupId));
                 }
             }
+
+            foreach (RepeaterItem item in TYPES.Items)
+            {
+                int AchivnedTypeId = (Convert.ToInt32((item.FindControl("Id") as HiddenField).Value));
+
+                if ((item.FindControl("WAS_CHECKED") as HiddenField).Value == "False" && (item.FindControl("IS_CHECKED") as CheckBox).Checked)
+                {
+                    DBUtils.ExecuteNonQuery("INSERT INTO dbo.CompititionAchivmentypes(CompititionId, AchivnedTypeId) VALUES(@CompititionId, @AchivnedTypeId)", new SqlParameter("CompititionId", competitionId), new SqlParameter("AchivnedTypeId", AchivnedTypeId));
+                }
+
+                if ((item.FindControl("WAS_CHECKED") as HiddenField).Value == "True" && !(item.FindControl("IS_CHECKED") as CheckBox).Checked)
+                {
+                    DBUtils.ExecuteNonQuery("DELETE FROM dbo.CompititionAchivmentypes WHERE CompititionId = @CompititionId AND AchivnedTypeId = @AchivnedTypeId", new SqlParameter("CompititionId", competitionId), new SqlParameter("AchivnedTypeId", AchivnedTypeId));
+                }
+            }
         }
     }
 }
