@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+						 Title="Авторизация"
+             x:Class="Motivation.Mobile.Pages.LoginPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Icon="SettingsIcon.png"
+								 Command="{Binding NettworkSettingsCommand}"/>
+	</ContentPage.ToolbarItems>
+	<StackLayout Orientation="Vertical" 
+							 Spacing="5"
+							 Padding="10">
+		<Entry Text="{Binding Login, Mode=TwoWay}"
+					 Placeholder="Логин"/>
+		<Entry Text="{Binding Password, Mode=TwoWay}"
+					 IsPassword="True"
+					 Placeholder="Пароль"/>
+		<Button Command="{Binding SignInCommand}"
+						Text="Подключиться" 
+						Style="{StaticResource SumbitButtonStyle}"/>
+	</StackLayout>
+</ContentPage>

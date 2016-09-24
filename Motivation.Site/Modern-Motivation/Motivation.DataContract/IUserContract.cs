@@ -11,6 +11,8 @@ namespace Motivation.DataContract
 
 	    string Name { get; set; }
 
+		string Password { get; set; }
+
 		string UserGroupTitle { get; set; }
 
 		bool IsGeneral { get; set; }

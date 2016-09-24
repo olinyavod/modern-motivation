@@ -4,7 +4,22 @@
              x:Class="Motivation.Mobile.App">
 	<Application.Resources>
 		<ResourceDictionary>
-			<Color x:Key="NavigationBarColor">#1976D2</Color>
+			<Color x:Key="NavigationBarColor">#254E7B</Color>
+			<Color x:Key="PageBackgroundColor">#F8F3EA</Color>
+			<Color x:Key="LigthBlue">#85C1E5</Color>
+			
+			<Style TargetType="{x:Type Page}">
+				<Setter Property="BackgroundColor" Value="{StaticResource PageBackgroundColor}"/>
+			</Style>
+
+			<Style TargetType="{x:Type Button}"
+						 x:Key="SumbitButtonStyle">
+				<Setter Property="BackgroundColor" Value="{StaticResource LigthBlue}"/>
+				<Setter Property="TextColor" Value="White"/>
+				<Setter Property="FontAttributes" Value="Bold"/>
+				<Setter Property="HeightRequest" Value="50"/>
+				<Setter Property="BorderRadius" Value="5"/>
+			</Style>
 		</ResourceDictionary>
 	</Application.Resources>
 </Application>

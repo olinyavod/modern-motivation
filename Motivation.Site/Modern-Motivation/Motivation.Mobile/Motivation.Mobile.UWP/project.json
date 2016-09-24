@@ -6,6 +6,7 @@
     "FreshMvvm": "2.2.0",
     "Microsoft.NETCore.UniversalWindowsPlatform": "5.2.2",
     "Newtonsoft.Json": "9.0.1",
+    "PropertyChanged.Fody": "1.51.3",
     "Simple.OData.V4.Client": "4.24.0",
     "Xam.Plugin.Media": "2.3.0",
     "Xamarin.Forms": "2.3.2.127"

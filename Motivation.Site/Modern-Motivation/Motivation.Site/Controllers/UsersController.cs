@@ -33,6 +33,7 @@ namespace Motivation.Site.Controllers
 				   {
 					   Id = u.Id,
 					   Name = u.Name,
+					   Password = u.Password,
 					   Login = u.Login,
 					   IsGeneral = u.IsGeneral,
 					   UserGroupTitle = g.Name
