@@ -1,0 +1,58 @@
+﻿@model IEnumerable<Motivation.Models.User>
+
+@{
+    Layout = "~/Views/Shared/Site.cshtml";
+}
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+
+<div class="row text-center">
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <h1>Рейтинг сотрудников</h1>
+        <table id="rating">
+            @{int i = 0; }
+            @foreach (Motivation.Models.User usr in Model)
+            {
+                i++;
+                <tr>
+                    <td></td>
+                    <td>@i</td>
+                    <td>@usr.Name</td>
+                    <td>@usr.Exp</td>
+                    <td>@usr.CoinsCount</td>
+                </tr>
+            }
+        </table>
+    </div>
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <h1>Рейтинг кланов</h1>
+        <table id="rating">
+            @{int j = 0; }
+    @foreach (Motivation.Models.UserGroup grp in ViewBag.Groups)
+    {
+                    j++;
+                <tr>
+                    <td>@j</td>
+                    <td>@grp.Name</td>
+                </tr>
+            }
+        </table>
+    </div>
+
+    <div class="col-md-3 col-sm-6 hero-feature">
+        <h1>Денежный рейтинг</h1>
+        <table id="rating">
+            @{int x = 0; }
+            @foreach (Motivation.Models.User usr in ViewBag.MoneyList)
+            {
+                x++;
+                <tr>
+                    <td>@x</td>
+                    <td>@usr.Name</td>
+                    <td>@usr.CoinsCount</td>
+                </tr>
+            }
+        </table>
+    </div>
+    </div>

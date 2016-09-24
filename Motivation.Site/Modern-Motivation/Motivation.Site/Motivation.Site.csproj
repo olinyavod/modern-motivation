@@ -357,6 +357,9 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Site.Master" />
     <Content Include="Views\Shared\ViewPage1.cshtml" />
+    <Content Include="Views\Shared\RatingList.cshtml" />
+    <Content Include="Views\Home\GetRating.cshtml" />
+    <Content Include="Views\Shared\Site.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
