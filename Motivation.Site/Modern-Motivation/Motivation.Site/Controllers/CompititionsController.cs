@@ -1,7 +1,7 @@
 using System.Linq;
 using System.Net;
 using System.Web.Http;
-using System.Web.Http.OData;
+using System.Web.OData;
 using Motivation.Data;
 using Motivation.Models;
 using Motivation.Site.Models;
@@ -11,6 +11,13 @@ namespace Motivation.Site.Controllers
 	public class CompititionsController : ODataController
 	{
 		MotivationDb _context = new MotivationDb();
+
+		protected override void Dispose(bool disposing)
+		{
+			if(disposing)
+				_context.Dispose();
+			base.Dispose(disposing);
+		}
 
 		[EnableQuery]
 		public IQueryable<CompititionDto> GetByUserId(int userId)
