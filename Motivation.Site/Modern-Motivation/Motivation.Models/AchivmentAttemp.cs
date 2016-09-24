@@ -10,7 +10,7 @@ namespace Motivation.Models
 
 		public string FileUrl { get; set; }
 
-		public User User { get; set; }
+		public virtual User User { get; set; }
 
 		public int UserId { get; set; }
 
@@ -18,13 +18,13 @@ namespace Motivation.Models
 
 		public bool IsAccepted { get; set; }
 
-		public User AcceptUser { get; set; }
+		public virtual User AcceptUser { get; set; }
 
 		public int? AcceptUserId { get; set; }
 
 		public string Comment { get; set; }
 
-		public AchivmentType AchivmentType { get; set; }
+		public virtual AchivmentType AchivmentType { get; set; }
 
 		public int? AchivnedTypeId { get; set; }
 

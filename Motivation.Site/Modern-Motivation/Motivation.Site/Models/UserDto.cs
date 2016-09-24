@@ -1,3 +1,4 @@
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.Web.UI;
 using Motivation.DataContract;
@@ -13,5 +14,18 @@ namespace Motivation.Site.Models
 		public string Name { get; set; }
 		public string UserGroupTitle { get; set; }
 		public bool IsGeneral { get; set; }
+
+        public string AvatarUrl
+        {
+            get
+            {
+                throw new NotImplementedException();
+            }
+
+            set
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

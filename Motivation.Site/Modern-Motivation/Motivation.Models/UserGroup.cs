@@ -4,6 +4,6 @@
 	{
 		public string Name { get; set; }
 
-		public UserGroupType Type { get; set; }
+		public virtual UserGroupType Type { get; set; }
 	}
 }

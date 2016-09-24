@@ -20,6 +20,16 @@ namespace Motivation.Site.Controllers
 			return View();
 		}
 
+        public ActionResult GetCompetitions()
+        {
+            List<Compitition> competitionList;
+            using (MotivationDb context = new MotivationDb())
+            {
+                competitionList = context.Set<Compitition>().ToList();
+            }
+            return View(competitionList);
+        }
+
         public ActionResult GetRatingList()
         {
             List<User> userList;
