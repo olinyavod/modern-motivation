@@ -10,7 +10,7 @@ namespace Motivation.Models
 
 	    public string Password { get; set; }
 
-	    public UserGroup UserGroup { get; set; }
+	    public virtual UserGroup UserGroup { get; set; }
 
 	    public int UserGroupId { get; set; }
 

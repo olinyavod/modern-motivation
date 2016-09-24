@@ -10,7 +10,7 @@ namespace Motivation.Models
 
 		public DateTime Date { get; set; }
 
-		public AchivmentType AchivmentType { get; set; }
+		public virtual AchivmentType AchivmentType { get; set; }
 
 		public int AchivnedTypeId { get; set; }
 

@@ -4,9 +4,9 @@ namespace Motivation.Models
 	{
 		public int CompititionId { get; set; }
 
-		public Compitition Compitition { get; set; }
+		public virtual Compitition Compitition { get; set; }
 
-		public UserGroup UserGroup { get; set; }
+		public virtual UserGroup UserGroup { get; set; }
 
 		public int UserGroupId { get; set; }
 	}

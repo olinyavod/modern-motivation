@@ -50,7 +50,7 @@
         ConnectionString="<%$ ConnectionStrings:MotivationDb%>"
         SelectCommand="SELECT gr.Id AS recId, gr.Name FROM dbo.UserGroups AS gr"></asp:SqlDataSource>
 
-    <div class="table-responsive">
+    <div>
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <asp:GridView runat="server" ID="USERS"

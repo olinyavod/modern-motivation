@@ -32,7 +32,7 @@
     </asp:SqlDataSource>
     </div>
 
-    <div class="table-responsive">
+    <div>
         <asp:UpdatePanel runat="server">
             <ContentTemplate>
                 <asp:GridView runat="server" ID="ACHIVEMENTS"
