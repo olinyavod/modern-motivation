@@ -184,6 +184,13 @@
     <Compile Include="Pages\AchivementTypes.aspx.designer.cs">
       <DependentUpon>AchivementTypes.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Pages\CompetitionEdit.aspx.cs">
+      <DependentUpon>CompetitionEdit.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Pages\CompetitionEdit.aspx.designer.cs">
+      <DependentUpon>CompetitionEdit.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Pages\Competitions.aspx.cs">
       <DependentUpon>Competitions.aspx</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -227,6 +234,7 @@
     <Content Include="Content\Site.css" />
     <Content Include="Pages\AchivementAttemp.aspx" />
     <Content Include="Pages\AchivementTypes.aspx" />
+    <Content Include="Pages\CompetitionEdit.aspx" />
     <Content Include="Pages\Competitions.aspx" />
     <Content Include="Pages\UserGroups.aspx" />
     <Content Include="Pages\Users.aspx" />
