@@ -1,0 +1,37 @@
+﻿
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link href="../../Content/bootstrap.min.css" rel="stylesheet" />
+    <title>Сам себе велосипед</title>
+    <link href="../../Content/singin.css" rel="stylesheet" />
+    <!-- Custom styles for this template -->
+    <!-- Just for debugging purposes. Don't actually copy this line! -->
+    <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
+
+</head>
+
+<body>
+    <div class="container">
+    @using (Html.BeginForm("Logon", "Login"))
+        {
+            <h2 class="form-signin-heading">Вход в систему</h2>
+            <input type="text" id="txtUserName" name="txtUserName"class="form-control" placeholder="Логин" required autofocus>
+            <input type="password"  id="txtUserPass" name="txtUserPass" class="form-control" placeholder="Пароль" required>
+            <label class="checkbox">
+                <input type="checkbox" id="chkPersistCookie" value="remember-me"> Запомнить меня
+            </label>
+            <input type="submit" class="btn btn-lg btn-primary btn-block" Text="Войти" />
+      }
+
+    </div> <!-- /container -->
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+</body>
+</html>
