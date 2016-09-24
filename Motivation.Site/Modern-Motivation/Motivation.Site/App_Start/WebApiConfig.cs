@@ -2,6 +2,10 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.OData.Builder;
+using System.Web.OData.Extensions;
+using System.Web.Services.Description;
+using Motivation.Site.Models;
 
 namespace Motivation.Site
 {
@@ -19,6 +23,18 @@ namespace Motivation.Site
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
-        }
+
+			var builder = new ODataConventionModelBuilder();
+			builder.EntitySet<UserDto>("Users");
+			builder.EntitySet<AchivmentAttempDto>("AchivmentAttemps");
+	        var compition = builder.EntitySet<CompititionDto>("Compititions");
+		        
+	        
+
+			config.MapODataServiceRoute(
+				routeName: "ODataRoute",
+				routePrefix: null,
+				model: builder.GetEdmModel());
+		}
     }
 }

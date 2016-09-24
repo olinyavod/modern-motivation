@@ -57,6 +57,10 @@
     <Compile Include="Migrations\201609231250584_FixNameCompititionAchivmentTypeTable.Designer.cs">
       <DependentUpon>201609231250584_FixNameCompititionAchivmentTypeTable.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.cs" />
+    <Compile Include="Migrations\201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.Designer.cs">
+      <DependentUpon>201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -80,6 +84,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609231250584_FixNameCompititionAchivmentTypeTable.resx">
       <DependentUpon>201609231250584_FixNameCompititionAchivmentTypeTable.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.resx">
+      <DependentUpon>201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
