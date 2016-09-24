@@ -2,30 +2,55 @@
     ViewBag.Title = "Home Page";
 }
 
-<div class="jumbotron">
-    <h1>ASP.NET</h1>
-    <p class="lead">ASP.NET is a free web framework for building great Web sites and Web applications using HTML, CSS and JavaScript.</p>
-    <p><a href="http://asp.net" class="btn btn-primary btn-lg">Learn more &raquo;</a></p>
+<div class="row" style="height: 100%; min-height: 100%;">
+    <div class="col-md-2 maxheight" style="background: #18BC9C; min-width: 300px; text-align: center;">
+        <div style="text-align: center; color: white; height: 100%;">
+            <div class="row">
+                <div class="col-lg-12" style="padding-left: 22px;">
+                    <div style="text-align: center; font-size: 40px;">
+                        Сухов Игорь
+                    </div>
+                    <img class="img-responsive" src="~/Content/IMG/profile.png" alt="">
+                    <br />
+                    <div class="btn-group-vertical">
+                        <div style="padding-top: 5px;">
+                            <button type="button" class="btn btn-default" style="width: 220px; color: #ffffff; background-color: #397624; border-color: #46b8da; font-weight: 700;">Мои достижения</button>
+                        </div>
+                        <div style="padding-top: 5px;">
+                            <button type="button" class="btn btn-default btn-primary" style="width: 220px;">События месяца</button>
+                        </div>
+                        <div style="padding-top: 5px;">
+                            <button type="button" class="btn btn-default btn-info" style="width: 220px; font-weight: 700;">Рейтинг</button>
+                        </div>
+                        <div style="padding-top: 5px;">
+                            <button type="button" class="btn btn-default btn-warning" style="width: 220px; font-weight: 700;">Клан</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 maxheight" style="background: #3a6cb2">
+        <div style="text-align: center; color: white; height: 100%;">
+            <div style="font-size: 20px; font-weight: 700; border-right: 4px solid white; min-height: 100%; height: 100%;">
+                Последние новости
+            </div>
+            <br />
+            <div id="News">
+                @Ajax.ActionLink("Show News", "GetNews", "News", new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "News", InsertionMode = InsertionMode.Replace }, new { style = "display : none;", id = "NewsInit" })
+            </div>
+        </div>
+    </div>
+    <div class="col-md-4 maxheight" style="background: #3a6cb2">
+        <div style="text-align: center; color: white; height: 100%;">
+            <div style="font-size: 20px; font-weight: 700;">
+                Последние достижения
+            </div>
+            <br />
+            @*<div id="Ach">
+                    @Ajax.ActionLink("Show Ach", "GetLastAch", "News", new { EmployeeId = UserId, DirectoryName = "CL Ceradir Hydrofil Power Coat 16" }, new AjaxOptions { HttpMethod = "POST", UpdateTargetId = "Ach", InsertionMode = InsertionMode.Replace }, new { style = "display : none;", id = "LastAchInit" })
+                </div>*@
+        </div>
+    </div>
 </div>
 
-<div class="row">
-    <div class="col-md-4">
-        <h2>Getting started</h2>
-        <p>
-            ASP.NET MVC gives you a powerful, patterns-based way to build dynamic websites that
-            enables a clean separation of concerns and gives you full control over markup
-            for enjoyable, agile development.
-        </p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301865">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Get more libraries</h2>
-        <p>NuGet is a free Visual Studio extension that makes it easy to add, remove, and update libraries and tools in Visual Studio projects.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301866">Learn more &raquo;</a></p>
-    </div>
-    <div class="col-md-4">
-        <h2>Web Hosting</h2>
-        <p>You can easily find a web hosting company that offers the right mix of features and price for your applications.</p>
-        <p><a class="btn btn-default" href="http://go.microsoft.com/fwlink/?LinkId=301867">Learn more &raquo;</a></p>
-    </div>
-</div>
