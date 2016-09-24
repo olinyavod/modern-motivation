@@ -10,6 +10,10 @@ namespace Motivation.Data
 			ToTable("dbo.UserGroups");
 
 			HasKey(m => m.Id);
-		}
+
+            //HasRequired(m => m.User)
+            //    .WithMany()
+            //    .HasForeignKey(m => m.UserId);
+        }
 	}
 }

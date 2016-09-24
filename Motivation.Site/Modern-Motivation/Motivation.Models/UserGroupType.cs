@@ -2,7 +2,7 @@
 {
 	public enum UserGroupType
 	{
-		Admin,
+		Admin = 0,
 		ActiveSales,
 		SalesSupport,
 		B2B,

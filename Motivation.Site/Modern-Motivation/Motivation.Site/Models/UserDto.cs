@@ -14,5 +14,6 @@ namespace Motivation.Site.Models
 		public string UserGroupTitle { get; set; }
 		public bool IsGeneral { get; set; }
         public string AvatarUrl { get; set; }
+        public string Information { get; set; }
     }
 }
