@@ -21,5 +21,7 @@ namespace Motivation.Models
 	    public int Exp { get; set; }
 
 	    public int CoinsCount { get; set; }
+
+	    public string AvatarUrl { get; set; }
     }
 }
