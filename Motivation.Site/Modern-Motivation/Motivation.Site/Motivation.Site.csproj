@@ -378,9 +378,13 @@
     <Content Include="Views\Anketa\Index.cshtml" />
     <Content Include="Views\Home\GetCompetitions.cshtml" />
     <Content Include="Views\Achivement\Index.cshtml" />
+    <Content Include="Views\Home\GetDepartmentList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Content\Images\department\" />
+    <Folder Include="Content\Images\event\" />
+    <Folder Include="Content\Images\rating\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>

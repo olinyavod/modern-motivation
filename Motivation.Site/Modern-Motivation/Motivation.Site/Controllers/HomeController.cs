@@ -27,6 +27,17 @@ namespace Motivation.Site.Controllers
             return View();
 		}
 
+        public ActionResult GetDepartmentList()
+        {
+            List<UserGroup> groupsList;
+            using (MotivationDb context = new MotivationDb())
+            {
+                groupsList = context.Set<UserGroup>().ToList();
+            }
+            return View(groupsList);
+        }
+
+
         public ActionResult Login()
         {
             return Redirect("~/Pages/Users.aspx");

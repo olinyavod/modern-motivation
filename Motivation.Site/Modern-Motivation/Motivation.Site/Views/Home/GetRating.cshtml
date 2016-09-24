@@ -3,57 +3,106 @@
 @{
     Layout = "~/Views/Shared/Site.cshtml";
 }
-<p>
-    @Html.ActionLink("Create New", "Create")
-</p>
 
-<div class="row text-center">
-    <div class="col-md-3 col-sm-6 hero-feature">
-        <h1>Рейтинг сотрудников</h1>
-        <table id="rating">
-            @{int i = 0; }
-            @foreach (Motivation.Models.User usr in Model)
+<div class="dashboard display-animation" style="margin: 0 auto; width: 900px; height: 1200px">
+<span class="tile tile-light-gray ripple-effect" style="width: 99%; height: 70px;">
+    <div class="label1" style="text-align: center; font-size: 30px;">
+        Рейтинги
+    </div>
+</span>
+
+    <div class="col-sm-1" style="background-image: url(../../Content/Images/rating/rate1.png); background-size: cover; background-repeat: no-repeat; width: 300px; height: 376px;">
+        <div style="position: relative; padding-top: 0px; margin-top:350px; padding-left: 0px; font-size: 12px;">
+            <table id="rating">
+                @{int i = 0; }
+                @foreach (Motivation.Models.User usr in Model)
             {
                 i++;
-                <tr>
-                    
-                    <td>@i</td>
-                    <td><img src="@usr.AvatarUrl" style="width:50px"/></td>
-                    <td>@usr.Name</td>
-                    <td>@usr.Exp</td>
-                    <td>@usr.CoinsCount</td>
-                </tr>
-            }
-        </table>
-    </div>
-    <div class="col-md-3 col-sm-6 hero-feature">
-        <h1>Рейтинг кланов</h1>
-        <table id="rating">
-            @{int j = 0; }
-    @foreach (Motivation.Models.UserGroup grp in ViewBag.Groups)
-    {
-                    j++;
-                <tr>
-                    <td>@j</td>
-                    <td>@grp.Name</td>
-                </tr>
-            }
-        </table>
-    </div>
+                    <tr>
 
-    <div class="col-md-3 col-sm-6 hero-feature">
-        <h1>Денежный рейтинг</h1>
-        <table id="rating">
-            @{int x = 0; }
-            @foreach (Motivation.Models.User usr in ViewBag.MoneyList)
+                        <td>@i</td>
+                        <td><img src="@usr.AvatarUrl" style="width:50px" /></td>
+                        <td>@usr.Name</td>
+                        <td>@usr.Exp</td>
+                        <td>@usr.CoinsCount</td>
+                    </tr>
+                }
+            </table>
+
+        
+        </div>
+    </div>
+    <div class="col-sm-1" style="background-image: url(../../Content/Images/rating/rate2.png); background-size: cover; background-repeat: no-repeat; width: 300px; height: 376px;">
+        <div style="position: relative; padding-top: 0px; padding-left: 0px; font-size: 12px; margin-top:350px">
+            <table id="rating">
+                @{int x = 0; }
+                @foreach (Motivation.Models.User usr in ViewBag.MoneyList)
             {
                 x++;
-                <tr>
-                    <td>@x</td>
-                    <td>@usr.Name</td>
-                    <td>@usr.CoinsCount</td>
-                </tr>
+                    <tr>
+                        <td>@x</td>
+                        <td><img src="@usr.AvatarUrl" style="width:50px" /></td>
+                        <td>@usr.Name</td>
+                        <td>@usr.CoinsCount</td>
+                    </tr>
+                }
+            </table>
+        </div>
+    </div>
+    <div class="col-sm-1" style="background-image: url(../../Content/Images/rating/rate3.png); background-size: cover; background-repeat: no-repeat; width: 300px; height: 376px;">
+        <div style="position: relative; padding-top: 0px; margin-top:380px;  padding-left: 0px; font-size: 12px;">
+           
+        </div>
+    </div>
+
+<script>
+    (function ($) {
+        var speed = 2000;
+        var container = $('.display-animation');
+        container.each(function () {
+            var elements = $(this).children();
+            elements.each(function () {
+                var elementOffset = $(this).offset();
+                var offset = elementOffset.left * 0.8 + elementOffset.top;
+                var delay = parseFloat(offset / speed).toFixed(2);
+                $(this)
+                    .css("-webkit-animation-delay", delay + 's')
+                    .css("-o-animation-delay", delay + 's')
+                    .css("animation-delay", delay + 's')
+                    .addClass('animated');
+            });
+        });
+    })(jQuery);
+
+    (function ($) {
+        $(".ripple-effect").click(function (e) {
+            var rippler = $(this);
+
+            // create .ink element if it doesn't exist
+            if (rippler.find(".ink").length == 0) {
+                rippler.append("<span class='ink'></span>");
             }
-        </table>
-    </div>
-    </div>
+
+            var ink = rippler.find(".ink");
+
+            // prevent quick double clicks
+            ink.removeClass("animate");
+
+            // set .ink diametr
+            if (!ink.height() && !ink.width()) {
+                var d = Math.max(rippler.outerWidth(), rippler.outerHeight());
+                ink.css({ height: d, width: d });
+            }
+
+            // get click coordinates
+            var x = e.pageX - rippler.offset().left - ink.width() / 2;
+            var y = e.pageY - rippler.offset().top - ink.height() / 2;
+
+            // set .ink position and add class .animate
+            ink.css({
+                top: y + 'px',
+                left: x + 'px'
+            }).addClass("animate");
+        })
+    })(jQuery);
+</script>
