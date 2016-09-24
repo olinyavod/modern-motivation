@@ -24,17 +24,15 @@ namespace Motivation.Site
                 defaults: new { id = RouteParameter.Optional }
             );
 
-			var builder = new ODataConventionModelBuilder();
-			builder.EntitySet<UserDto>("Users");
-			builder.EntitySet<AchivmentAttempDto>("AchivmentAttemps");
-	        var compition = builder.EntitySet<CompititionDto>("Compititions");
-		        
-	        
+            var builder = new ODataConventionModelBuilder();
+            builder.EntitySet<UserDto>("Users");
+            builder.EntitySet<AchivmentAttempDto>("AchivmentAttemps");
+            var compition = builder.EntitySet<CompititionDto>("Compititions");
 
-			config.MapODataServiceRoute(
-				routeName: "ODataRoute",
-				routePrefix: null,
-				model: builder.GetEdmModel());
-		}
+            config.MapODataServiceRoute(
+                routeName: "ODataRoute",
+                routePrefix: null,
+                model: builder.GetEdmModel());
+        }
     }
 }
