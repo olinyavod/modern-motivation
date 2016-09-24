@@ -38,5 +38,10 @@ namespace Motivation.Site.Controllers
                        AvatarUrl = u.AvatarUrl
                    };
         }
+
+        public ActionResult Home()
+        {
+            return Redirect("~/Home/Index");
+        }
     }
 }

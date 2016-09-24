@@ -284,6 +284,7 @@
     <Content Include="Content\Images\anketa\Descr.png" />
     <Content Include="Content\Images\anketa\Information.png" />
     <Content Include="Content\Images\anketa\Photo.png" />
+    <Content Include="Content\Images\Back.png" />
     <Content Include="Content\Images\cabin.png" />
     <Content Include="Content\Images\cake.png" />
     <Content Include="Content\Images\circus.png" />
