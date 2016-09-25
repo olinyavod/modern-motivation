@@ -1,9 +1,11 @@
 using System;
 using System.Windows.Input;
 using Motivation.DataContract;
+using PropertyChanged;
 
 namespace Motivation.Mobile.Models
 {
+	[ImplementPropertyChanged]
 	public class AchivmentAttempDto : IAchivmentAttempContract
 	{
 		public int Id { get; set; }

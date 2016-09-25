@@ -31,11 +31,11 @@ namespace Motivation.Site.Models
 
 		public string AchivmentTypeComment { get; set; }
 
-		public int AchivmentTypeMaxCount { get; set; }
+		public int? AchivmentTypeMaxCount { get; set; }
 
-		public int AchivmentTypeExpCount { get; set; }
+		public int? AchivmentTypeExpCount { get; set; }
 
-		public int AchivmentTypeCoinsCount { get; set; }
+		public int? AchivmentTypeCoinsCount { get; set; }
 
 		public string AchivmentTypeImageUrl { get; set; }
 

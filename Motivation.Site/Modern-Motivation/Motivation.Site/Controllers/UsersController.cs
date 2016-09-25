@@ -35,17 +35,18 @@ namespace Motivation.Site.Controllers
 					   Name = u.Name,
 					   Password = u.Password,
 					   Login = u.Login,
+					   AvatarUrl = u.AvatarUrl,
 					   IsGeneral = u.IsGeneral,
 					   UserGroupTitle = g.Name
 				   };
 		}
 
-	    public UserDto Get([FromODataUri] int id)
+		[EnableQuery]
+	    public SingleResult<UserDto> Get([FromODataUri] int id)
 	    {
-		    var item = CreateQuery().FirstOrDefault(i => i.Id == id);
-		    if (item == null)
-			    throw new HttpResponseException(HttpStatusCode.NotFound);
-		    return item;
+		    var item = CreateQuery().Where(i => i.Id == id);
+			return SingleResult.Create(item);
+
 	    }
     }
 }

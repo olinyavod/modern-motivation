@@ -5,6 +5,7 @@ using System.Web.Http;
 using System.Web.OData.Builder;
 using System.Web.OData.Extensions;
 using System.Web.Services.Description;
+using Motivation.Models;
 using Motivation.Site.Models;
 
 namespace Motivation.Site
@@ -24,10 +25,15 @@ namespace Motivation.Site
                 defaults: new { id = RouteParameter.Optional }
             );
 
-			var builder = new ODataConventionModelBuilder();
-			builder.EntitySet<UserDto>("Users");
-			builder.EntitySet<AchivmentAttempDto>("AchivmentAttemps");
-	        var compition = builder.EntitySet<CompititionDto>("Compititions");
+	        var builder = new ODataConventionModelBuilder {Namespace = "MotivationService"};
+	        builder.EntitySet<UserDto>("Users");
+			builder.EntitySet<AchivmentAttempDto>("AchivmentAttempItems");
+	        builder.EntitySet<CompititionDto>("Compititions");
+	        builder.EntitySet<AchivmentAttemp>("AchivmentAttemps");
+
+	        builder.EntityType<CompititionDto>()
+		        .Action("GetByUserId")
+		        .Parameter<int>("UserId");
 		        
 	        
 

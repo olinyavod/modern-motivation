@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:forms="clr-namespace:FFImageLoading.Forms;assembly=FFImageLoading.Forms"
+             x:Class="Motivation.Mobile.Pages.AchivmentAttempPage">
+	<ContentPage.ToolbarItems>
+		<ToolbarItem Command="{Binding RefreshCommand}"
+								 Icon="RefreshIcon.png"/>
+		<ToolbarItem Command="{Binding AddAttempCommand}"
+								 Icon="PlusIcon.png"/>
+	</ContentPage.ToolbarItems>
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<DataTemplate x:Key="ItemDtaTemplate">
+				<ViewCell>
+					<Grid Padding="10" ColumnSpacing="10">
+						<Grid.ColumnDefinitions>
+							<ColumnDefinition Width="Auto"/>
+							<ColumnDefinition Width="*"/>
+						</Grid.ColumnDefinitions>
+						<forms:CachedImage Source="{Binding FileUrl}"
+															 HeightRequest="100"
+															 WidthRequest="100" 
+															 Aspect="AspectFill"/>
+						<StackLayout Grid.Column="1" 
+												 Orientation="Vertical" 
+												 VerticalOptions="Center">
+							<Label Text="{Binding FileName}"
+										 TextColor="#111111" 
+										 FontSize="Medium"
+										 FontAttributes="Bold"/>
+							<Label Text="{Binding AchivmentTypeComment}"
+										 TextColor="#777777"
+										 FontSize="Small"/>
+						</StackLayout>
+					</Grid>
+				</ViewCell>
+			</DataTemplate>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<ListView ItemsSource="{Binding ItemsSource}" 
+						HasUnevenRows="True"
+						ItemTemplate="{StaticResource ItemDtaTemplate}"/>
+</ContentPage>

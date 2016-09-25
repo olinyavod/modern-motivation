@@ -18,6 +18,19 @@ namespace Motivation.Site.Controllers
 				_context.Dispose();
 			base.Dispose(disposing);
 		}
+		[EnableQuery]
+		public IQueryable<CompititionDto> Get()
+		{
+			return from c in _context.Set<Compitition>()
+				   select new CompititionDto
+				   {
+					   Id = c.Id,
+					   Comment = c.Comment,
+					   EndDate = c.EndDate,
+					   ImageUrl = c.ImageUrl,
+					   StartDate = c.StartDate
+				   };
+		}
 
 		[EnableQuery]
 		public IQueryable<CompititionDto> GetByUserId(int userId)

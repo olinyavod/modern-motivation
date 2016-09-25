@@ -1,4 +1,6 @@
 using System.ComponentModel.DataAnnotations;
+using System.Data.Entity.Core.EntityClient;
+using System.Data.Entity.Core.Mapping;
 using System.Web.UI;
 using Motivation.DataContract;
 using Motivation.Models;
@@ -13,6 +15,7 @@ namespace Motivation.Site.Models
 		public string Name { get; set; }
 		public string Password { get; set; }
 		public string UserGroupTitle { get; set; }
+		public string AvatarUrl { get; set; }
 		public bool IsGeneral { get; set; }
     }
 }

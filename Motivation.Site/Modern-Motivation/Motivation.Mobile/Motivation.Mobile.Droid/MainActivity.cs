@@ -6,6 +6,13 @@ using Android.Runtime;
 using Android.Views;
 using Android.Widget;
 using Android.OS;
+using FreshMvvm;
+using Motivation.Mobile.Droid.Providers;
+using Motivation.Mobile.Models;
+using Splat;
+
+[assembly: UsesFeature("android.hardware.camera", Required = false)]
+[assembly: UsesFeature("android.hardware.camera.autofocus", Required = false)]
 
 namespace Motivation.Mobile.Droid
 {
@@ -19,7 +26,9 @@ namespace Motivation.Mobile.Droid
 
 			base.OnCreate(bundle);
 			UserDialogs.Init(this);
+			FreshIOC.Container.Register((IFtpUploader)new FtpUploader(new NetworkSettingsStore()));
 			global::Xamarin.Forms.Forms.Init(this, bundle);
+			
 			LoadApplication(new App());
 		}
 	}

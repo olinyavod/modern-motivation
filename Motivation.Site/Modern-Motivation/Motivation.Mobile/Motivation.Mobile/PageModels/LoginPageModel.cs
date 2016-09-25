@@ -1,13 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Input;
 using Acr.Settings;
 using Acr.UserDialogs;
 using FreshMvvm;
-using Microsoft.OData.Edm;
 using Motivation.Mobile.Models;
 using PropertyChanged;
 using Simple.OData.Client;
@@ -41,19 +37,20 @@ namespace Motivation.Mobile.PageModels
 				{
 					var netqorkSettings = _settings.Get(NetworkSettingsStore.Key, new NetworkSettingsStore());
 					var client = new ODataClient(netqorkSettings.ServerUrl);
-					var user = await client.For<UserDto>()
-						.Filter(i => i.Login == Login && i.Password == Password)
-						.FindEntryAsync();
 
+					var users = await client
+						.For<UserDto>("Users")
+						.FindEntriesAsync();
+					var user = users.FirstOrDefault(i => i.Login == Login && i.Password == Password);
 					if (user != null)
 					{
-
 						_settings.Set(UserStore.Key, new UserStore
 						{
 							UserId = user.Id,
 							HasUser = true
 						});
-						_userDialogs.Alert("Подключился");
+						
+						((App) App.Current).ShowMainPage();
 					}
 					else
 						_userDialogs.Alert("Некорректный логин или пароль");

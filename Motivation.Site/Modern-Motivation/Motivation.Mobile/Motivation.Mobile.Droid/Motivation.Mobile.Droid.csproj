@@ -80,6 +80,22 @@
       <HintPath>..\..\packages\AndHUD.1.2.0\lib\MonoAndroid\AndHUD.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FFImageLoading, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.1.7\lib\MonoAndroid10\FFImageLoading.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.1.7\lib\MonoAndroid10\FFImageLoading.Forms.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Forms.Droid, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.Forms.2.1.7\lib\MonoAndroid10\FFImageLoading.Forms.Droid.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="FFImageLoading.Platform, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\Xamarin.FFImageLoading.2.1.7\lib\MonoAndroid10\FFImageLoading.Platform.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="FormsViewGroup, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\packages\Xamarin.Forms.2.3.2.127\lib\MonoAndroid10\FormsViewGroup.dll</HintPath>
       <Private>True</Private>
@@ -216,6 +232,7 @@
   <ItemGroup>
     <Compile Include="MainActivity.cs" />
     <Compile Include="MainApplication.cs" />
+    <Compile Include="Providers\FtpUploader.cs" />
     <Compile Include="Resources\Resource.Designer.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -271,6 +288,18 @@
     <AndroidResource Include="Resources\drawable-hdpi\SettingsIcon.png" />
     <AndroidResource Include="Resources\drawable-xhdpi\SettingsIcon.png" />
     <AndroidResource Include="Resources\drawable-xxhdpi\SettingsIcon.png" />
+    <AndroidResource Include="Resources\drawable\PlusIcon.png" />
+    <AndroidResource Include="Resources\drawable\RefreshIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\PlusIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\RefreshIcon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\PlusIcon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\RefreshIcon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\PlusIcon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\RefreshIcon.png" />
+    <AndroidResource Include="Resources\drawable\PhotoIcon.png" />
+    <AndroidResource Include="Resources\drawable-hdpi\Photocon.png" />
+    <AndroidResource Include="Resources\drawable-xhdpi\PhotoIcon.png" />
+    <AndroidResource Include="Resources\drawable-xxhdpi\PhotoIcon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
   <Import Project="..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets" Condition="Exists('..\..\packages\Xamarin.Android.Support.Vector.Drawable.23.3.0\build\Xamarin.Android.Support.Vector.Drawable.targets')" />

@@ -27,11 +27,11 @@ namespace Motivation.DataContract
 
 		string AchivmentTypeComment { get; set; }
 
-		int AchivmentTypeMaxCount { get; set; }
+		int? AchivmentTypeMaxCount { get; set; }
 
-		int AchivmentTypeExpCount { get; set; }
+		int? AchivmentTypeExpCount { get; set; }
 
-		int AchivmentTypeCoinsCount { get; set; }
+		int? AchivmentTypeCoinsCount { get; set; }
 
 		string AchivmentTypeImageUrl { get; set; }
 	}

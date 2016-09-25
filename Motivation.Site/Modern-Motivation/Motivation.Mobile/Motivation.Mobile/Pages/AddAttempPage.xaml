@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:Motivation.Mobile.Converters;assembly=Motivation.Mobile"
+             x:Class="Motivation.Mobile.Pages.AddAttempPage">
+	<ContentPage.Resources>
+		<ResourceDictionary>
+			<converters:BitmapToImageSourceConverter x:Key="BitmapToImageSourceConverter"/>
+		</ResourceDictionary>
+	</ContentPage.Resources>
+	<Grid Padding="10"
+				RowSpacing="5">
+		<Grid.RowDefinitions>
+			<RowDefinition Height="*"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+			<RowDefinition Height="Auto"/>
+		</Grid.RowDefinitions>
+		<Image Source="{Binding Cover}"
+					 Aspect="AspectFill"
+					 VerticalOptions="Fill"
+					 HorizontalOptions="Fill"/>
+		<Button Grid.Row="0"
+						BorderColor="#e85100"
+						BorderRadius="50"
+						WidthRequest="100"
+						HeightRequest="100"
+						BorderWidth="2"
+		        VerticalOptions="Center"
+						HorizontalOptions="Center"
+						Command="{Binding ChooseFileCommand}"
+						IsVisible="{Binding MustChooseFile}" 
+						BackgroundColor="White">
+			<Button.Image>
+				<OnPlatform x:TypeArguments="FileImageSource"
+										Android="PhotoIcon.png"/>
+			</Button.Image>
+		</Button>
+		<Entry Grid.Row="1" 
+					 Placeholder="Название"
+					 Text="{Binding FileName}"/>
+		<Entry Grid.Row="2"
+					 Placeholder="Комментарий"
+						Text="{Binding Comment}"/>
+		<Picker Grid.Row="3"
+						Title="Выбирите достижение"
+						SelectedIndex="{Binding AchimnetTypePostion, Mode=TwoWay}">
+			<Picker.Items>
+				<x:String>Привлечь клиентов</x:String>
+				<x:String>Привлечь клиентов</x:String>
+				<x:String>Привлечь клиентов 3</x:String>
+				<x:String>Привлечь клиентов 4</x:String>
+				<x:String>Привлечь клиентов 5</x:String>
+				<x:String>Привлечь клиентов 5</x:String>
+				<x:String>Продать услугу 1</x:String>
+				<x:String>Продать услугу 2</x:String>
+				<x:String>Продать услугу 3</x:String>
+				<x:String>Продать услугу 4</x:String>
+				<x:String>Продать услугу 5</x:String>
+				<x:String>Продать услугу 6</x:String>
+				<x:String>План продаж РУБ 1</x:String>
+				<x:String>План продаж РУБ 2</x:String>
+				<x:String>План продаж РУБ 3</x:String>
+				<x:String>План продаж РУБ 4</x:String>
+				<x:String>План продаж РУБ 5</x:String>
+				<x:String>План продаж РУБ 65</x:String>
+				<x:String>Встречи 1</x:String>
+				<x:String>Встречи 2</x:String>
+				<x:String>Встречи 3</x:String>
+				<x:String>Встречи 4</x:String>
+				<x:String>Встречи 5</x:String>
+				<x:String>Встречи 6</x:String>
+				<x:String>Холодные звонки 1</x:String>
+				<x:String>Холодные звонки 2</x:String>
+				<x:String>Холодные звонки 3</x:String>
+				<x:String>Холодные звонки 4</x:String>
+				<x:String>Холодные звонки 5</x:String>
+				<x:String>Холодные звонки 6</x:String>
+				<x:String>До развитие клиента 5%</x:String>
+				<x:String>До развитие клиента 25%</x:String>
+				<x:String>До развитие клиента 50%</x:String>
+				<x:String>До развитие клиента 100%</x:String>
+				<x:String>До развитие клиента 200%</x:String>
+				<x:String>До развитие клиента 1000%</x:String>
+			</Picker.Items>
+		</Picker>
+		<Button Grid.Row="4"
+						Command="{Binding DoneCOmmand}"
+						Style="{StaticResource SumbitButtonStyle}"
+						Text="Звгрузить"/>
+	</Grid>
+</ContentPage>
