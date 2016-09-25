@@ -302,6 +302,7 @@
     <Content Include="Content\Images\profile.png" />
     <Content Include="Content\Images\Right.png" />
     <Content Include="Content\Images\safe.png" />
+    <Content Include="Content\Images\shop.png" />
     <Content Include="Content\Images\submarine.png" />
     <Content Include="Content\RobotoFont.css" />
     <Content Include="Content\sb-admin-2.css" />
@@ -383,6 +384,7 @@
     <Content Include="Views\Home\GetCompetitions.cshtml" />
     <Content Include="Views\Achivement\Index.cshtml" />
     <Content Include="Views\Home\GetDepartmentList.cshtml" />
+    <Content Include="Views\Home\Shop.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

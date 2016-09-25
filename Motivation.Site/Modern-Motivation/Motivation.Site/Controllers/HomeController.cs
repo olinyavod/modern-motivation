@@ -48,13 +48,6 @@ namespace Motivation.Site.Controllers
             return Redirect("~/Anketa/Index");
         }
 
-		public ActionResult About()
-		{
-			ViewBag.Message = "Your application description page.";
-
-			return View();
-		}
-
         public ActionResult GetCompetitions()
         {
             List<Compitition> competitionList;
@@ -99,12 +92,19 @@ namespace Motivation.Site.Controllers
                    };
         }
 
-        public ActionResult Contact()
+        public ActionResult Shop()
 		{
-			ViewBag.Message = "Your contact page.";
+
 
 			return View();
 		}
 
-	}
+        public ActionResult About()
+        {
+            ViewBag.Message = "Your application description page.";
+
+            return View();
+        }
+
+    }
 }
