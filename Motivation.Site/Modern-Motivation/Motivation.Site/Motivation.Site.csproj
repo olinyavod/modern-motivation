@@ -384,6 +384,7 @@
     <Folder Include="App_Data\" />
     <Folder Include="Content\Images\department\" />
     <Folder Include="Content\Images\event\" />
+    <Folder Include="Content\Images\motivation\" />
     <Folder Include="Content\Images\rating\" />
     <Folder Include="Views\Login\" />
   </ItemGroup>

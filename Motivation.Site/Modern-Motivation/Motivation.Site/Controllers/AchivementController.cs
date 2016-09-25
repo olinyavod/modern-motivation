@@ -28,11 +28,12 @@ namespace Motivation.Site.Controllers
             }
 
             List<UserAchivment> achivement;
-   
-            achivement = _context.UserAchivments.Where(x=>x.UserId == UserId).ToList();
-            
+
+            ///achivement = _context.UserAchivments.Where(x=>x.UserId == UserId).ToList();
+            achivement = _context.UserAchivments.ToList();
+
             ViewBag.Achivements = achivement;
-            ViewBag.Name = _context.Users.Where(x => x.Id == UserId).FirstOrDefault().Name;
+            //ViewBag.Name = _context.Users.Where(x => x.Id == UserId).FirstOrDefault().Name;
 
             return View();
 
