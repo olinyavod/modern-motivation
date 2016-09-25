@@ -29,10 +29,10 @@ namespace Motivation.Site
             builder.EntitySet<AchivmentAttempDto>("AchivmentAttemps");
             var compition = builder.EntitySet<CompititionDto>("Compititions");
 
-            config.MapODataServiceRoute(
-                routeName: "ODataRoute",
-                routePrefix: null,
-                model: builder.GetEdmModel());
+            //config.MapODataServiceRoute(
+            //    routeName: "ODataRoute",
+            //    routePrefix: null,
+            //    model: builder.GetEdmModel());
         }
     }
 }

@@ -16,24 +16,24 @@ namespace Motivation.Site.Controllers
         }
 
         // GET: Achivement
-        public ActionResult Index(int? UserId)
+        public ActionResult Index()
         {
-            if (Request.QueryString["UserId"] == null)
+            int UserId;
+            if (Session["UserId"] == null)
             {
-                UserId = Convert.ToInt32(Session["UserId"]);
+                UserId = 1;
             }
             else
             {
-                UserId = Convert.ToInt32(Request.QueryString["UserId"]);
+                UserId = Convert.ToInt32(Session["UserId"]);
             }
 
             List<UserAchivment> achivement;
 
-            ///achivement = _context.UserAchivments.Where(x=>x.UserId == UserId).ToList();
+            achivement = _context.UserAchivments.Where(x=>x.UserId == UserId).ToList();
             achivement = _context.UserAchivments.ToList();
 
             ViewBag.Achivements = achivement;
-            //ViewBag.Name = _context.Users.Where(x => x.Id == UserId).FirstOrDefault().Name;
 
             return View();
 

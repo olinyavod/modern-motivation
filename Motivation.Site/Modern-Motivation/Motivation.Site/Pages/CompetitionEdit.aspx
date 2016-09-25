@@ -9,7 +9,7 @@
 <body>
     <form id="form1" runat="server">
     <div>
-        <h1>Редактирование соревнований</h1>
+        <h1>Редактирование заданий</h1>
 
         <asp:SqlDataSource runat="server" ID="GROUPS_SOURCE"  
             ConnectionString="<%$ ConnectionStrings:MotivationDb%>"

@@ -9,6 +9,7 @@
                 SELECT 
 	                ach.Id AS RecId,
 	                ach.Comment AS AchName,
+                    typ.Comment AS TypeName,
                     ach.IsCompleted,
                     usr.Name AS UserName,
                     grp.Name AS GroupName,
@@ -18,18 +19,47 @@
 					ach.FileUrl,
                     ach.IsAccepted
                     FROM dbo.AchivmentAttemps AS ach
-                    JOIN dbo.Users AS usr ON usr.Id = ach.UserId
-                    JOIN dbo.UserGroups AS grp ON grp.Id = usr.UserGroupId
-					JOIN dbo.AchivmentType AS typ ON typ.Id = ach.AchivnedTypeId
+                    LEFT JOIN dbo.Users AS usr ON usr.Id = ach.UserId
+                    LEFT JOIN dbo.UserGroups AS grp ON grp.Id = usr.UserGroupId
+					LEFT JOIN dbo.AchivmentType AS typ ON typ.Id = ach.AchivnedTypeId
                     WHERE ach.IsAccepted = 0
             "
-        UpdateCommand="
+            DeleteCommand=" DELETE FROM 
+                dbo.AchivmentAttemps 
+                WHERE Id = @RecId"
+            
+            UpdateCommand="
+            
             UPDATE 
                 dbo.AchivmentAttemps 
                 SET 
                     IsCompleted = 1,
                     IsAccepted = @IsAccepted
-                WHERE Id = @RecId">
+                WHERE Id = @RecId
+            
+            DECLARE @Coins int, @Exp int, @UserId int, @TypeId int
+
+            SELECT 
+                @Coins = usr.CoinsCount , 
+                @Exp = usr.Exp,
+                @UserId = usr.Id,
+                @TypeId =  at.AchivnedTypeId
+                FROM dbo.AchivmentAttemps AS at 
+                JOIN dbo.Users AS usr ON usr.Id = at.UserId 
+                JOIN dbo.AchivmentType AS typ ON typ.Id = at.AchivnedTypeId
+                WHERE at.Id = @RecId
+            
+            UPDATE dbo.Users
+                SET 
+                    CoinsCount = @Coins,
+                    Exp = @Exp
+                WHERE Id  = @UserId
+             
+            INSERT INTO dbo.UserAchivments (UserId, Date, AchivnedTypeId)
+                SELECT at.UserId, GETDATE(), at.AchivnedTypeId FROM dbo.AchivmentAttemps AS at WHERE at.Id = @RecId
+
+            "
+            >
         <UpdateParameters>
             <asp:Parameter Name="IsAccepted" DbType="Boolean" />
             <asp:Parameter Name="RecId" DbType="Int32" />
@@ -77,6 +107,14 @@
                                 <asp:Label runat="server" ID="ACH_NAME_ED" Text='<%#Eval("AchName") %>' />
                             </EditItemTemplate>
                         </asp:TemplateField>
+                       <asp:TemplateField HeaderText="Наименование достижения">
+                            <ItemTemplate>
+                                <asp:Label runat="server" ID="TYP" Text='<%#Eval("TypeName") %>' />
+                            </ItemTemplate>
+                            <EditItemTemplate>
+                                <asp:Label runat="server" ID="TYP_ED" Text='<%#Eval("TypeName") %>' />
+                            </EditItemTemplate>
+                        </asp:TemplateField>
                         <asp:TemplateField HeaderText="Номинальное количество">
                             <ItemTemplate>
                                 <asp:Label runat="server" ID="ACH_COUNT" Text='<%#Eval("MaxCount") %>' />
@@ -95,10 +133,10 @@
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Фaйл">
                             <ItemTemplate>
-                                <asp:HyperLink runat="server" NavigateUrl='<%#Eval("FileUrl")%>' Text="Ссылка"/>
+                                <asp:HyperLink runat="server" target="_blank" NavigateUrl='<%#Eval("FileUrl")%>' Text="Ссылка"/>
                             </ItemTemplate>
                             <EditItemTemplate>
-                                <asp:HyperLink runat="server" NavigateUrl='<%#Eval("FileUrl")%>' Text="Ссылка"/>
+                                <asp:HyperLink runat="server" target="_blank" NavigateUrl='<%#Eval("FileUrl")%>' Text="Ссылка"/>
                             </EditItemTemplate>
                         </asp:TemplateField>
                         <asp:TemplateField HeaderText="Утвержден?">
@@ -112,6 +150,7 @@
                          <asp:TemplateField>
                             <ItemTemplate>
                                 <asp:LinkButton ID="LinkButton1" runat="server" CommandName="Edit" ValidationGroup="edit" Text="Изменить" />
+                                <asp:LinkButton ID="LinkButton2" runat="server" CommandName="Delete" ValidationGroup="edit" Text="Удалить" />
                             </ItemTemplate>
                             <EditItemTemplate>
                                 <asp:LinkButton ID="LinkButton3" runat="server" CommandName="Update" ValidationGroup="edit" Text="Сохранить" />

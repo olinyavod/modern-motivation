@@ -90,17 +90,10 @@
                             <a href="AchivementTypes.aspx"><i class="fa fa-table fa-fw"></i> Список типовых достижений</a>
                         </li>
                         <li>
-                            <a href="Products.aspx"><i class="fa fa-edit fa-fw"></i> Список достижений сотрудников</a>
-                        </li>
-                        <li>
                             <a href="AchivementAttemp.aspx"><i class="fa fa-wrench fa-fw"></i> Заявки на подтверждение достижений</a>
                         </li>
                         <li>
                              <a href="Competitions.aspx"><i class="fa fa-wrench fa-fw"></i> Соревнования</a>
-                            <!-- /.nav-second-level -->
-                        </li>
-                        <li>
-                             <a href="Customers.aspx"><i class="fa fa-wrench fa-fw"></i> Список товаров</a>
                             <!-- /.nav-second-level -->
                         </li>
 

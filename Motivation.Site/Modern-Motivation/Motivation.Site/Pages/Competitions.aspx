@@ -10,7 +10,8 @@
 	                typ.Id AS RecId,
 	                typ.StartDate,
                     typ.EndDate,
-                    typ.Comment
+                    typ.Comment,
+                    'CompetitionEdit.aspx?CompetitionId=' + CAST(typ.Id AS varchar) AS link
                     FROM dbo.Compititions AS typ
             "
         UpdateCommand="
@@ -79,7 +80,11 @@
                                 <asp:TextBox runat="server" ID="NAME" CssClass="form-control" Text='<%#Bind("EndDate") %>' />
                             </EditItemTemplate>
                         </asp:TemplateField>
-                      
+                        <asp:TemplateField HeaderText="Действия">
+                            <ItemTemplate>
+                                <a href=<%#Eval("link")%> target="_blank">Ссылка</a>
+                            </ItemTemplate>
+                        </asp:TemplateField>
                     </Columns>
                     <HeaderStyle BackColor="#428bca" ForeColor="White" Font-Bold="True" HorizontalAlign="Left" />
                     <PagerStyle BackColor="#f5f5f5" HorizontalAlign="Center" />
