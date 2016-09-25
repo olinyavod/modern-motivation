@@ -72,9 +72,9 @@ namespace Motivation.Site.Controllers
             List<User> userMoneyList;
             using (MotivationDb context = new MotivationDb())
             {
-                userList = context.Set<User>().OrderBy(x => x.Exp).OrderByDescending(x=>x.Exp).ToList();
-                groupsList = context.Set<UserGroup>().ToList();
-                userMoneyList = context.Set<User>().Where(x=>x.CoinsCount > 0).OrderByDescending(x => x.CoinsCount).ToList();
+                userList = context.Set<User>().OrderBy(x => x.Exp).OrderByDescending(x=>x.Exp).Take(4).ToList();
+                groupsList = context.Set<UserGroup>().Take(3).ToList();
+                userMoneyList = context.Set<User>().Where(x=>x.CoinsCount > 0).OrderByDescending(x => x.CoinsCount).Take(4).ToList();
             }
 
             ViewBag.Groups = groupsList;
