@@ -15,6 +15,8 @@ namespace Motivation.DataContract
 
 		string UserGroupTitle { get; set; }
 
+		string AvatarUrl { get; set; }
+
 		bool IsGeneral { get; set; }
     }
 }

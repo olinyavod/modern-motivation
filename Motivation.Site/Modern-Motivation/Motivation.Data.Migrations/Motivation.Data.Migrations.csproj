@@ -61,6 +61,10 @@
     <Compile Include="Migrations\201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.Designer.cs">
       <DependentUpon>201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201609240723576_AddAvatarUrlToUser.cs" />
+    <Compile Include="Migrations\201609240723576_AddAvatarUrlToUser.Designer.cs">
+      <DependentUpon>201609240723576_AddAvatarUrlToUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -87,6 +91,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.resx">
       <DependentUpon>201609231528109_FixOptionalAchivmentTypeToAchivmentAttemp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201609240723576_AddAvatarUrlToUser.resx">
+      <DependentUpon>201609240723576_AddAvatarUrlToUser.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
