@@ -288,7 +288,10 @@
     <Content Include="Content\Images\cabin.png" />
     <Content Include="Content\Images\cake.png" />
     <Content Include="Content\Images\circus.png" />
+    <Content Include="Content\Images\department\department.png" />
+    <Content Include="Content\Images\FlashBack.png" />
     <Content Include="Content\Images\game.png" />
+    <Content Include="Content\Images\Left.png" />
     <Content Include="Content\Images\logo.png" />
     <Content Include="Content\Images\main\Graphics.png" />
     <Content Include="Content\Images\main\Notebook.png" />
@@ -297,6 +300,7 @@
     <Content Include="Content\Images\main\Profile.png" />
     <Content Include="Content\Images\main\Paper.png" />
     <Content Include="Content\Images\profile.png" />
+    <Content Include="Content\Images\Right.png" />
     <Content Include="Content\Images\safe.png" />
     <Content Include="Content\Images\submarine.png" />
     <Content Include="Content\RobotoFont.css" />
@@ -382,7 +386,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Content\Images\department\" />
     <Folder Include="Content\Images\event\" />
     <Folder Include="Content\Images\motivation\" />
     <Folder Include="Content\Images\rating\" />
